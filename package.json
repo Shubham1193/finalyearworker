@@ -1,0 +1,17 @@
+{
+  "name": "worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "crypto": "^1.0.1",
+    "lodash": "^4.17.21",
+    "redis": "^4.6.15"
+  }
+}
