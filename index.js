@@ -5,7 +5,10 @@ const _ = require('lodash');
 const os = require('os')
 const cluster = require('cluster')
 const crypto = require('crypto');
+const express = require('express');
 
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 
 // if (cluster.isPrimary) {
@@ -150,6 +153,16 @@ const crypto = require('crypto');
       }
       
       startWorker();
+
+
+  app.get('/health', (req, res) => {
+        res.status(500).json({ status: 'Worker is running' });
+  });
+    
+  app.listen(PORT, () => {
+      console.log(`Health check server running on port ${PORT}`);
+  });
+    
       
   // }
 
